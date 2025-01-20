@@ -29,6 +29,9 @@ import {
 import ChooseAnimal from './chooseAnimal';
 import Header from './header';
 import NameAnimal from './nameAnimal';
+import HeaderClass from './HeaderClass';
+import ChooseAnimalClass from './ChooseAnimalClass';
+import NameAnimalClass from './NameAnimalClass';
 
 const image = {uri:'https://reactnative.dev/img/tiny_logo.png'}
 function App(): React.JSX.Element {
@@ -55,9 +58,9 @@ function App(): React.JSX.Element {
   return (
     <SafeAreaView style={styles.backgroundStyle}>
       {/*custom components*/}
-      <Header/>
-      <ChooseAnimal/>
-      <NameAnimal/>
+      <HeaderClass/>
+      <ChooseAnimalClass/>
+      <NameAnimalClass/>
       {/*implementations*/}
       <ScrollView
         style={styles.scrollViewStyle}
