@@ -54,9 +54,11 @@ function App(): React.JSX.Element {
 
   return (
     <SafeAreaView style={styles.backgroundStyle}>
+      {/*custom components*/}
       <Header/>
       <ChooseAnimal/>
       <NameAnimal/>
+      {/*implementations*/}
       <ScrollView
         style={styles.scrollViewStyle}
         refreshControl={
