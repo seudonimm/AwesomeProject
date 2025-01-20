@@ -30,6 +30,7 @@ const styles = StyleSheet.create({
     },
     textStyle:{
         fontSize: 20,
+        margin: 5
     }
 });
 export default NameAnimal;
