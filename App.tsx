@@ -31,13 +31,14 @@ import Header from './header';
 import NameAnimal from './nameAnimal';
 import Landing from './screens/Landing';
 import Login from './screens/Login';
+import Register from './screens/Register';
 
 const image = {uri:'https://reactnative.dev/img/tiny_logo.png'}
 function App(): React.JSX.Element {
 
   return (
     <SafeAreaView style={styles.backgroundStyle}>
-      <Login/>
+      <Landing/>
     </SafeAreaView>
   );
 }
@@ -45,7 +46,7 @@ function App(): React.JSX.Element {
 const styles = StyleSheet.create({
   backgroundStyle:{
     flex: 1,
-    backgroundColor: 'black'
+    backgroundColor: '#19181f'
   },
   /*scrollViewStyle:{
     backgroundColor: '#808080'

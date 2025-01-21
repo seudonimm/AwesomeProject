@@ -17,7 +17,7 @@ const Landing = props => {
                 text={"Social Chatter Team."}
             />
             <Subtext
-                text={"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum"}
+                text={"Lorem Ipsum is simply dummy text of the printing and typesetting industry. \nLorem ipsum"}
             />
             <CustomButtonLanding
                 style={styles.buttonStyle}
@@ -31,7 +31,7 @@ const Landing = props => {
 const styles = StyleSheet.create({
     viewStyle: {
         flex: 1,
-        backgroundColor: 'black',
+        backgroundColor: '#19181f',
         alignItems: 'center',
         justifyContent: 'center',
     },

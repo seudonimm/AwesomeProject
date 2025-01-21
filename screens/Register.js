@@ -9,20 +9,21 @@ import CustomInputField from "../components/CustomInputField";
 import Subtext from "../components/Subtext";
 import CustomButton from "../components/CustomButton";
 
-const Login = () => {
+const Register = () => {
 
     return(
         <View style={styles.titleViewStyle}>
             <Image style={styles.imageStyle} source={require('/Users/jusman/AwesomeProject/assets/arrow.png')}/>
             <Heading
-                text={"Hey,\nWelcome \nBack"}
+                text={"Let's get started"}
                 isLeft={true}
             />
             <CustomInputField 
                 text={"Email id"}
-                image={'envelope'}    
+                image={'/Users/jusman/AwesomeProject/android/app/src/main/res/drawable/envelope.png'}    
             />
             <CustomInputField text={"Password"}/>
+            <CustomInputField text={"Confirm Password"}/>
             <Subtext
                 text={"Forgot password?"}
                 isRight={true}
@@ -40,10 +41,10 @@ const Login = () => {
             />
             <View style={styles.rowStyle}>
                 <Subtext
-                    text={"Dont have an account? "}
+                    text={"Already have an account? "}
                 />
                 <Subtext
-                    text={"Sign Up"}
+                    text={"Login"}
                     isBold={true}
                 />
             </View>
@@ -74,4 +75,4 @@ const styles = StyleSheet.create({
         alignSelf: 'center'
     }
 });
-export default Login;
+export default Register;

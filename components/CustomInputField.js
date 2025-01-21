@@ -22,12 +22,13 @@ const styles = StyleSheet.create({
         height: '7%',
         width: '90%',
         alignSelf: 'center',
-        backgroundColor: 'grey',
+        backgroundColor: '#1e1d24',
         borderRadius: 30,
         justifyContent: 'left',
         borderWidth: 1,
         borderColor: 'white',
-        margin: '2%'
+        margin: '2%',
+        paddingLeft: '10%'
     }
 });
 

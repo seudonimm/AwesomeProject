@@ -7,10 +7,16 @@ import {
 } from "react-native"
 
 const CustomButton = (props) => {
-    const {text, image, isImage} = props;
+    const {text, isInvert} = props;
     return(
-        <View style={styles.container}>
-            <Text style={styles.textStyle}>{text}</Text>
+        <View style={{
+            ...styles.container,
+            backgroundColor: (isInvert ? '#19181f':'white'),    
+        }}>
+            <Text style={{
+                ...styles.textStyle,
+                color: (isInvert ? 'white':'#19181f')
+            }}>{text}</Text>
         </View>
     );
 }
@@ -24,7 +30,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignSelf: 'center',
         margin: '5%',
-
+        borderWidth: 1,
+        borderColor: 'white'
     },
     textStyle: {
         alignSelf: 'center',
