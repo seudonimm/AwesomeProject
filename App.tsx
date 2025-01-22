@@ -40,33 +40,18 @@ import StorageTest from './src/screens/StorageTest';
 import List from './src/screens/List';
 import FlatListExample from './src/screens/FlatListExample';
 import SectionListExample from './src/screens/SectionListExample';
+import AppNavigation from './src/navigation';
+
 
 const image = {uri:'https://reactnative.dev/img/tiny_logo.png'}
 function App(): React.JSX.Element {
 
-  const RootStack = createNativeStackNavigator({
-    initialRouteName: 'SectionListExample',
-    screenOptions: {
-      headerTitle: '',
-      headerStyle:{backgroundColor:'#19181f'},
-      headerTintColor:'white',
-      
-    },
-    screens:{
-      StorageTest: StorageTest,
-      Landing: Landing,
-      Login: Login,
-      Register: Register,
-      List: List,
-      FlatListExample: FlatListExample,
-      SectionListExample: SectionListExample
-    }
-  });
 
-  const Navigation = createStaticNavigation(RootStack);
+
+  //const Navigation = createStaticNavigation(RootStack);
 
   return (
-    <Navigation/>
+    <AppNavigation/>
   );
 }
 
