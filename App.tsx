@@ -26,20 +26,41 @@ import {
   TouchableOpacity,
   TouchableWithoutFeedback
 } from 'react-native';
+import { createStaticNavigation, NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
 import ChooseAnimal from './chooseAnimal';
 import Header from './header';
 import NameAnimal from './nameAnimal';
-import Landing from './screens/Landing';
-import Login from './screens/Login';
-import Register from './screens/Register';
+import Landing from './src/screens/Landing';
+import Login from './src/screens/Login';
+import Register from './src/screens/Register';
+import { HeaderTitle } from '@react-navigation/elements';
+import StorageTest from './src/screens/StorageTest';
 
 const image = {uri:'https://reactnative.dev/img/tiny_logo.png'}
 function App(): React.JSX.Element {
 
+  const RootStack = createNativeStackNavigator({
+    initialRouteName: 'Landing',
+    screenOptions: {
+      headerTitle: '',
+      headerStyle:{backgroundColor:'#19181f'},
+      headerTintColor:'white',
+      
+    },
+    screens:{
+      StorageTest: StorageTest,
+      Landing: Landing,
+      Login: Login,
+      Register: Register
+    }
+  });
+
+  const Navigation = createStaticNavigation(RootStack);
+
   return (
-    <SafeAreaView style={styles.backgroundStyle}>
-      <Landing/>
-    </SafeAreaView>
+    <Navigation/>
   );
 }
 

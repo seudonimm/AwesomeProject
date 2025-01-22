@@ -1,23 +1,36 @@
+import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import {
     Text,
     Button,
     StyleSheet,
-    View
+    View,
+    Pressable
 } from "react-native"
 
 const CustomButton = (props) => {
-    const {text, isInvert} = props;
+    const {text, isInvert, navigateTo, buttonFunction1, buttonfunction2} = props;
+
+    //const navigation = useNavigation();
+
     return(
-        <View style={{
-            ...styles.container,
-            backgroundColor: (isInvert ? '#19181f':'white'),    
-        }}>
+        <Pressable 
+            style={{
+                ...styles.container,
+                backgroundColor: (isInvert ? '#19181f':'white'),    
+            }}
+            onPress={props.onPress}
+            /*onPress={()=>{
+                navigation.navigate(navigateTo);
+                buttonFunction1;
+                buttonfunction2;
+            }}*/
+        >
             <Text style={{
                 ...styles.textStyle,
                 color: (isInvert ? 'white':'#19181f')
             }}>{text}</Text>
-        </View>
+        </Pressable>
     );
 }
 

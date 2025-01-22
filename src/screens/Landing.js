@@ -8,8 +8,13 @@ import Heading from '../components/Heading';
 import Subtext from '../components/Subtext';
 import CustomButton from '../components/CustomButton';
 import CustomButtonLanding from '../components/CustomButtonLanding';
+import { useNavigation } from '@react-navigation/native';
+import Register from './Register';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const Landing = props => { 
+    const navigation = useNavigation();
+
     return(
         <View style={styles.viewStyle}>
             <Image style={styles.imageStyle} source={require('/Users/jusman/AwesomeProject/assets/landing.png')}/>
@@ -23,6 +28,8 @@ const Landing = props => {
                 style={styles.buttonStyle}
                 text1={"Login"}
                 text2={"Sign Up"}
+                navigateTo1={"Login"}
+                navigateTo2={"Register"}
             />
         </View>
     );

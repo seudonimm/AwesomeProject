@@ -1,51 +1,79 @@
-import React from "react";
+import React, { useState } from "react";
 import { 
     View,
     StyleSheet,
-    Image
+    Image,
+    Alert
  } from "react-native"
 import Heading from "../components/Heading";
 import CustomInputField from "../components/CustomInputField";
 import Subtext from "../components/Subtext";
 import CustomButton from "../components/CustomButton";
+import LinkText from "../components/LinkText";
+import { useNavigation } from "@react-navigation/native";
+import ImageAndTextButton from "../components/ImageAndTextButton";
 
 const Register = () => {
+    const navigation = useNavigation();
+
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+
+    const onSignUpPressed = () =>{
+        if(username && password){
+            navigation.navigate('Login', username)
+        }
+        else{
+            Alert.alert("Enter Username and Password");
+        }
+    };
 
     return(
         <View style={styles.titleViewStyle}>
-            <Image style={styles.imageStyle} source={require('/Users/jusman/AwesomeProject/assets/arrow.png')}/>
             <Heading
                 text={"Let's get started"}
                 isLeft={true}
             />
             <CustomInputField 
                 text={"Email id"}
-                image={'/Users/jusman/AwesomeProject/android/app/src/main/res/drawable/envelope.png'}    
+                source={require('/Users/jusman/AwesomeProject/assets/envelope.png')}
+                onChangeText={text => setUsername(text)}
             />
-            <CustomInputField text={"Password"}/>
-            <CustomInputField text={"Confirm Password"}/>
+            <CustomInputField text={"Password"} 
+                isPasswordField={true}
+                source={require('/Users/jusman/AwesomeProject/assets/lock.png')}
+            />
+            <CustomInputField text={"Confirm Password"} 
+                isPasswordField={true}
+                source={require('/Users/jusman/AwesomeProject/assets/lock.png')}
+            />
             <Subtext
                 text={"Forgot password?"}
                 isRight={true}
                 isBold={true}
             />
             <CustomButton
-                text={"Login"}
+                text={"Sign up"}
+                onPress={onSignUpPressed}
             />
             <Subtext
                 text={"or continue with"}
             />
-            <CustomButton
+            <ImageAndTextButton
                 text={"Google"}    
                 isInvert={true}
+                source={require('/Users/jusman/AwesomeProject/assets/google_logo.png')}
+
             />
             <View style={styles.rowStyle}>
                 <Subtext
                     text={"Already have an account? "}
                 />
-                <Subtext
+                <LinkText
                     text={"Login"}
-                    isBold={true}
+                    onPress={()=>{
+                        navigation.navigate('Login');
+                    }}
                 />
             </View>
         </View>
