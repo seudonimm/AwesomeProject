@@ -37,12 +37,15 @@ import Login from './src/screens/Login';
 import Register from './src/screens/Register';
 import { HeaderTitle } from '@react-navigation/elements';
 import StorageTest from './src/screens/StorageTest';
+import List from './src/screens/List';
+import FlatListExample from './src/screens/FlatListExample';
+import SectionListExample from './src/screens/SectionListExample';
 
 const image = {uri:'https://reactnative.dev/img/tiny_logo.png'}
 function App(): React.JSX.Element {
 
   const RootStack = createNativeStackNavigator({
-    initialRouteName: 'Landing',
+    initialRouteName: 'SectionListExample',
     screenOptions: {
       headerTitle: '',
       headerStyle:{backgroundColor:'#19181f'},
@@ -53,7 +56,10 @@ function App(): React.JSX.Element {
       StorageTest: StorageTest,
       Landing: Landing,
       Login: Login,
-      Register: Register
+      Register: Register,
+      List: List,
+      FlatListExample: FlatListExample,
+      SectionListExample: SectionListExample
     }
   });
 
