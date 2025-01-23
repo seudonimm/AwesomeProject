@@ -2,18 +2,20 @@ import React, { useEffect, useState } from "react";
 import { 
     View,
     StyleSheet,
-    Image,
     Alert
  } from "react-native"
-import Heading from "../components/Heading";
-import CustomInputField from "../components/CustomInputField";
-import Subtext from "../components/Subtext";
-import CustomButton from "../components/CustomButton";
-import LinkText from "../components/LinkText";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { DarkTheme, useNavigation } from "@react-navigation/native";
-import ImageAndTextButton from "../components/ImageAndTextButton";
-import Color from "../res/colors";
+import { useNavigation } from "@react-navigation/native";
+import { DARK_PURPLE } from "../res/colors.js";
+import {
+    Heading,
+    CustomInputField,
+    Subtext,
+    CustomButton,
+    LinkText,
+    ImageAndTextButton
+} from '../components/index.js'
+
 
 const Login = props => {
 
@@ -25,7 +27,7 @@ const Login = props => {
     const storeUsername = async () => {
         try{
             await AsyncStorage.setItem('username', username);
-            Alert.alert(username)
+            //Alert.alert(username)
         } catch(e) {
             Alert.alert(e);
         }
@@ -118,13 +120,13 @@ const Login = props => {
 const styles = StyleSheet.create({
     viewStyle: {
         flex: 1,
-        backgroundColor: '#19181f',
+        backgroundColor: DARK_PURPLE,
         alignItems: 'center',
         justifyContent: 'center'
     },
     titleViewStyle:{
         flex:1,
-        backgroundColor: '#19181f',
+        backgroundColor: DARK_PURPLE,
         alignItems: 'flex-start'
 
     },

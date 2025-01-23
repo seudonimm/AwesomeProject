@@ -4,16 +4,14 @@ import {
     StyleSheet,
     Image
 } from 'react-native';
-import Heading from '../components/Heading';
-import Subtext from '../components/Subtext';
-import CustomButton from '../components/CustomButton';
-import CustomButtonLanding from '../components/CustomButtonLanding';
-import { useNavigation } from '@react-navigation/native';
-import Register from './Register';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+
+import {
+    Heading,
+    Subtext,
+    CustomButtonLanding
+} from '../components/index.js'
 
 const Landing = props => { 
-    const navigation = useNavigation();
 
     return(
         <View style={styles.viewStyle}>

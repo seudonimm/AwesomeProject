@@ -1,15 +1,14 @@
 import React from "react";
 import {
-    FlatList,
     SectionList,
     StyleSheet,
-    Text,
-    View
 }from 'react-native'
 import { SafeAreaView } from "react-native-safe-area-context";
-import Heading from "../components/Heading";
-import Subtext from "../components/Subtext";
-import CustomListItemBox from "../components/CustomListItemBox";
+import {
+    Heading,
+    Subtext,
+    CustomListItemBox
+} from '../components/index.js';
 
 const SectionListExample = props => {
 
@@ -40,7 +39,7 @@ const SectionListExample = props => {
                         />
                     )
                 }}
-                keyExtractor={(item, index) => item.toString+index.toString()}
+                keyExtractor={(item, index) => index.toString()+item}
                 renderSectionHeader={({section: {category}}) => {
                     return(
                         <Subtext

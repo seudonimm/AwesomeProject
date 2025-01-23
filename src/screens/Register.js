@@ -2,16 +2,17 @@ import React, { useState } from "react";
 import { 
     View,
     StyleSheet,
-    Image,
     Alert
  } from "react-native"
-import Heading from "../components/Heading";
-import CustomInputField from "../components/CustomInputField";
-import Subtext from "../components/Subtext";
-import CustomButton from "../components/CustomButton";
-import LinkText from "../components/LinkText";
 import { useNavigation } from "@react-navigation/native";
-import ImageAndTextButton from "../components/ImageAndTextButton";
+import {
+    Heading,
+    CustomInputField,
+    Subtext,
+    CustomButton,
+    LinkText,
+    ImageAndTextButton
+} from '../components/index.js'
 
 const Register = () => {
     const navigation = useNavigation();

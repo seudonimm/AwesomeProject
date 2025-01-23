@@ -42,6 +42,7 @@ import List from './src/screens/List';
 import FlatListExample from './src/screens/FlatListExample';
 import SectionListExample from './src/screens/SectionListExample';
 import AppNavigation from './src/navigation';
+import { DARK_PURPLE } from './src/res/colors';
 
 
 const image = {uri:'https://reactnative.dev/img/tiny_logo.png'}
@@ -59,7 +60,7 @@ function App(): React.JSX.Element {
 const styles = StyleSheet.create({
   backgroundStyle:{
     flex: 1,
-    backgroundColor: '#19181f'
+    backgroundColor: DARK_PURPLE
   },
   /*scrollViewStyle:{
     backgroundColor: '#808080'

@@ -1,14 +1,13 @@
 import React from "react";
 import {
-    FlatList,
     StyleSheet,
-    Text,
-    View
 }from 'react-native'
 import { SafeAreaView } from "react-native-safe-area-context";
-import Heading from "../components/Heading";
-import CustomListItemBox from "../components/CustomListItemBox";
 import { ScrollView } from "react-native-gesture-handler";
+import {
+    Heading,
+    CustomListItemBox
+} from '../components/index.js'
 
 const List = props => {
 
