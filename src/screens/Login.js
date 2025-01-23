@@ -11,8 +11,9 @@ import Subtext from "../components/Subtext";
 import CustomButton from "../components/CustomButton";
 import LinkText from "../components/LinkText";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { useNavigation } from "@react-navigation/native";
+import { DarkTheme, useNavigation } from "@react-navigation/native";
 import ImageAndTextButton from "../components/ImageAndTextButton";
+import Color from "../res/colors";
 
 const Login = props => {
 
@@ -35,7 +36,7 @@ const Login = props => {
     const onLogInPressed = () =>{
         if(username){
             storeUsername(username);
-            navigation.navigate('Landing');
+            navigation.navigate('MyDrawer');
         }
         else{
             Alert.alert(username);

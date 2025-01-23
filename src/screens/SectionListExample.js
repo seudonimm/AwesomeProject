@@ -8,6 +8,8 @@ import {
 }from 'react-native'
 import { SafeAreaView } from "react-native-safe-area-context";
 import Heading from "../components/Heading";
+import Subtext from "../components/Subtext";
+import CustomListItemBox from "../components/CustomListItemBox";
 
 const SectionListExample = props => {
 
@@ -25,7 +27,7 @@ const SectionListExample = props => {
     let letters = ['a', 'b', 'c', 'd', 'a', 'b', 'c', 'd'];
 
     return(
-        <SafeAreaView>
+        <SafeAreaView style={styles.container}>
             <Heading
                 text={'Section List'}
             />
@@ -33,17 +35,18 @@ const SectionListExample = props => {
                 sections={DATA}
                 renderItem={({item}) => {
                     return( 
-                        <Text style={styles.container}>
-                            {item}
-                        </Text>
+                        <CustomListItemBox style={styles.listItemContainer}
+                            text={item}
+                        />
                     )
                 }}
-                keyExtractor={(item, index) => index.toString()}
+                keyExtractor={(item, index) => item.toString+index.toString()}
                 renderSectionHeader={({section: {category}}) => {
                     return(
-                        <Text>
-                            {category}
-                        </Text>
+                        <Subtext
+                            text={category}
+                            isBold={true}
+                        />
                     );
                 }}
             />
@@ -54,9 +57,20 @@ const SectionListExample = props => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        height: '10%',
-        width: '100%',
-        borderWidth: 1
+        backgroundColor: '#19181f'
+    },
+    listItemContainer: {
+        flex: 1,
+        height: '20%',
+        width: '90%',
+        borderWidth: 1,
+        color: 'white',
+        borderColor: 'white',
+        alignSelf: 'center',
+        margin: '1%',
+        borderRadius: 10,
+        fontSize: 20,
+        textAlign: 'center'
     }
 });
 export default SectionListExample;
